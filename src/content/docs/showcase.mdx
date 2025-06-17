@@ -1,0 +1,233 @@
+---
+title: MDX Component Showcase
+description: A comprehensive demonstration of every component available in the MDX renderer.
+---
+
+import { Terminal } from "lucide-react";
+
+# MDX Component Showcase
+
+<Tabs defaultValue="preview">
+
+<TabsList>
+  <TabsTrigger value="preview">Preview</TabsTrigger>
+  <TabsTrigger value="code">Code</TabsTrigger>
+</TabsList>
+
+<TabsContent value="preview">
+  <ComponentPreviewTemp>
+    <div className="flex justify-center items-center">
+      <Button>Click me </Button>
+    </div>
+  </ComponentPreviewTemp>
+</TabsContent>
+
+<TabsContent value="code">
+
+<CodeBlockWrapper>
+
+```tsx showLineNumbers {3-16}
+import { CalculatorTool } from "@/utils/calculatorTool";
+
+const calculator = new CalculatorTool();
+
+//for simple expressions
+const simpleExpression = "2 * (3 + 4) - 100 / (99 - 1)";
+const simpleResult = await calculator.evaluate(simpleExpression);
+
+// For complex expressions
+const complexExpression = "2 * (a + b) - 100 / (c - 1)";
+const variables = { a: 3, b: 4, c: 99 };
+
+const complexResult = await calculator.evaluateMultiVar(
+  complexExpression,
+  variables
+);
+```
+
+</CodeBlockWrapper>
+
+</TabsContent>
+
+</Tabs>
+This page demonstrates every available component from `mdx-components.tsx`. It serves as a visual guide and a testing ground for all supported markdown and custom component syntax. This paragraph (`p`) includes a **strong** element and a standard [link (`a`) to another page](#).
+
+<Callout>
+  This is a `<Callout>` component. It's great for drawing attention to important information, notes, or warnings.
+</Callout>
+
+## Typography & Basic Elements
+
+This section covers the standard HTML elements that have been styled.
+
+### Headings (h2-h6)
+
+The title above is an `h1`. Below are the rest of the heading levels.
+
+## This is an H2 Heading
+
+### This is an H3 Heading
+
+#### This is an H4 Heading
+
+##### This is an H5 Heading
+
+<h6>This is an H6 Heading</h6>
+
+### Lists
+
+<div className="grid md:grid-cols-2 gap-8">
+  <div>
+    **Unordered List (`ul`)**
+    <ul>
+      <li>List item one.</li>
+      <li>List item two.</li>
+      <li>
+        List item three with a nested list:
+        <ul>
+          <li>Nested item A.</li>
+          <li>Nested item B.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div>
+    **Ordered List (`ol`)**
+    <ol>
+      <li>First step.</li>
+      <li>Second step.</li>
+      <li>Third step.</li>
+    </ol>
+  </div>
+</div>
+
+### Blockquote
+
+> This is a blockquote. It's useful for quoting text from another source. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+### Table
+
+This is a standard markdown table.
+
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| Cell 1,1 | Cell 1,2 | Cell 1,3 |
+| Cell 2,1 | Cell 2,2 | Cell 2,3 |
+| Cell 3,1 | Cell 3,2 | Cell 3,3 |
+
+---
+
+## Custom Components
+
+Here are the custom React components that can be used directly in MDX.
+
+### Alert
+
+Use alerts to convey important status messages to the user.
+
+<Alert>
+  <Terminal className="h-4 w-4" />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can use the `<Alert>`, `<AlertTitle>`, and `<AlertDescription>` components together.
+  </AlertDescription>
+</Alert>
+
+### Accordion
+
+An accordion is perfect for hiding and showing content in a compact way.
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is this an accordion?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It's built using the `Accordion`, `AccordionItem`,
+      `AccordionTrigger`, and `AccordionContent` components.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Can I have another item?</AccordionTrigger>
+    <AccordionContent>
+      Absolutely! You can have as many as you need.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+### Image & AspectRatio
+
+The custom `Image` component is from `next/image`. Here, it's wrapped in an `AspectRatio` component to maintain a 16:9 ratio.
+
+<AspectRatio ratio={16 / 9} className="bg-muted mt-6 rounded-md border">
+  <Image
+    src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+    alt="A beautiful landscape"
+    fill
+    className="rounded-md object-cover"
+  />
+</AspectRatio>
+
+### Cards
+
+Cards are great for grouping related content.
+
+### Button
+
+You can even use custom buttons directly in your content.
+
+<Button>Click Me</Button>
+
+### Steps
+
+Create step-by-step guides easily with the `<Steps>` and `<Step>` components.
+
+<Steps>
+  <Step>Clone the repository</Step>
+  <p>First, you need to clone the project from GitHub.</p>
+  <Step>Install dependencies</Step>
+  <p>Next, run `npm install` in the project directory.</p>
+  <Step>Run the development server</Step>
+  <p>Finally, start the server with `npm run dev` and you're good to go!</p>
+</Steps>
+
+### Tabs
+
+Display content in a tabbed interface.
+
+<Tabs defaultValue="account" className="w-full">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">
+    This is the content for the **Account** tab. You can put any markdown or
+    other components here.
+  </TabsContent>
+  <TabsContent value="password">
+    This is the content for the **Password** tab.
+    <Alert className="mt-4">
+      <AlertDescription>
+        Remember to use a strong, unique password!
+      </AlertDescription>
+    </Alert>
+  </TabsContent>
+</Tabs>
+
+---
+
+## Code Blocks & Previews
+
+Demonstrating inline code, fenced code blocks, and component previews.
+
+This is an example of `inline code`.
+
+### Fenced Code Block
+
+This code block will be rendered using the custom `pre` component wrapper, which includes a copy button.
+
+```jsx
+import React from "react";
+
+function HelloWorld() {
+  return <h1>Hello, World!</h1>;
+}
+```
