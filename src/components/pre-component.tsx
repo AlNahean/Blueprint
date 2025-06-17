@@ -7,9 +7,6 @@ export const Pre = ({ children, ...props }: any) => {
     return (
         <div className="relative">
             <CopyButton text={textToCopy} />
-
-
-
             <pre {...props} className='!dark:bg-muted/30  p-4 rounded-md'>{children}</pre>
         </div>
     );
