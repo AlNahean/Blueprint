@@ -26,24 +26,6 @@ export const META_THEME_COLORS = {
 
 export const navLinks = [
   {
-    label: "Docs",
-    href: "/docs",
-    isActive: (pathname: string) => pathname === "/docs",
-    external: false,
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-    isActive: (pathname: string) => pathname === "/blog",
-    external: false,
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-    isActive: (pathname: string) => pathname === "/projects",
-    external: false,
-  },
-  {
     label: "Changelog",
     href: "/changelog",
     isActive: (pathname: string) => pathname === "/changelog",

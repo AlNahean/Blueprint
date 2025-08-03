@@ -1,5 +1,3 @@
-const { withContentlayer } = require("next-contentlayer2");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -27,4 +25,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withContentlayer(nextConfig);
+module.exports = nextConfig;
