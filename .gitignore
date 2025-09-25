@@ -34,3 +34,5 @@ pnpm-debug.log*
 
 # Turbo
 .turbo
+
+/generated/prisma

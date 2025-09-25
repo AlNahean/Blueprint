@@ -1,4 +1,4 @@
-import { FileIcon, ChevronLeft, ChevronRight } from "lucide-react"
+import { FileIcon, ChevronLeft, ChevronRight, Trash } from "lucide-react"
 
 type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -189,6 +189,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  trash: Trash
 }
 
 export function getIconForLanguageExtension(language: string) {
