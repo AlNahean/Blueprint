@@ -76,3 +76,33 @@ src
 ├── lib/          # Utility functions and libraries
 └── styles/       # Global styles
 ```
+
+
+To clone the `fast-start` branch directly from your repository, you have a few options. Here are three ways to do it:
+
+### 🟢 Option 1: Clone only the `fast-start` branch
+This command will clone only the specified branch and set it as your working branch.
+
+```bash
+git clone --branch fast-start https://github.com/AlNahean/Blueprint.git
+```
+
+### 🟢 Option 2: Clone everything, then switch
+This method clones the entire repository and then switches to the `fast-start` branch.
+
+```bash
+git clone https://github.com/AlNahean/Blueprint.git
+cd Blueprint
+git checkout fast-start
+```
+
+### 🟢 Option 3: Shallow clone (faster, less history)
+A shallow clone downloads only the latest version of the specified branch, which is faster and uses less space.
+
+```bash
+git clone --branch fast-start --single-branch https://github.com/AlNahean/Blueprint.git
+```
+
+---
+
+⚡ **Recommended:** Use **Option 3** if you only need that specific branch and want a lightweight copy without the full project history.
